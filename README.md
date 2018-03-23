@@ -260,8 +260,6 @@ curl -k -X GET 'http://123.56.187.196:10086/api/block/height/230?org=1'
 ```html
 <!DOCTYPE html>
 <html><head>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-<meta name="renderer" content="webkit"/>
 <meta charset="utf-8"/>
 <title>TEST</title>
 <script type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -271,8 +269,8 @@ curl -k -X GET 'http://123.56.187.196:10086/api/block/height/230?org=1'
 <body>
 	<script type="text/javascript" charset="utf-8">
 	  $(function(){
-	  // const secret =
-	  // const recipient =
+	  const secret = 'your secret'
+	  const recipient = '24dYNPt2Ed8ukwuaQi66R4npkeSWdygcUFo8hEHKseZ7DZtzV8'
 	  const send = exports.send(secret, recipient, 2.9)
 	  $.ajax({
 	    url: 'http://123.56.187.196:10086/api/transaction/transaction',
