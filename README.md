@@ -175,7 +175,7 @@ sdk 导出函数：joinDapp
 | id | long | Y | 侧链 id |
 | secondSecret |string |N | 二级密码
 
-备注：侧链注册者自动成为 Dapp 代理。成为 Dapp 代理可处理跨链兑代币交易。
+备注：侧链注册者自动成为 Dapp 代理。成为 Dapp 代理可处理跨链兑币交易。
 
 sdk 请求示例：
 ```js
