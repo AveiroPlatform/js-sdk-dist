@@ -1,31 +1,31 @@
 目录
 =================
 
-  * [Graphene JS SDK 文档](#Graphene-js-sdk 文档)
-    * [<strong>1 JS SDK 使用说明</strong>](#1-JS SDK 使用说明)
+  * [Graphene-JS-SDK 文档](#Graphene-JS-SDK文档)
+    * [<strong>1 JS-SDK 使用说明</strong>](#1-JS-SDK使用说明)
       * [<strong>1.1 请求过程说明</strong>](#11-请求过程说明)
     * [<strong>2 接口</strong>](#2-接口)
-      * [<strong>2.1 账户 accounts</strong>](#21-账户 accounts)
+      * [<strong>2.1 账户 accounts</strong>](#21-账户accounts)
         * [<strong>2.1.1 根据地址获取账户信息</strong>](#211-根据地址获取账户信息)
-      * [<strong>2.2 交易 transactions</strong>](#22-交易 transactions)
+      * [<strong>2.2 交易 transactions</strong>](#22-交易transactions)
         * [<strong>2.2.1 转账</strong>](#221-转账)
         * [<strong>2.2.2 设置二级密码</strong>](#222-设置二级密码)
         * [<strong>2.2.3 注册为代理</strong>](#223-注册为代理)
         * [<strong>2.2.4 投票</strong>](#224-投票)
-        * [<strong>2.2.5 注册 Dapp</strong>](#225-注册 Dapp)
-        * [<strong>2.2.6 成为 Dapp 代理</strong>](#226-成为 Dapp 代理)
+        * [<strong>2.2.5 注册 Dapp</strong>](#225-注册Dapp)
+        * [<strong>2.2.6 成为 Dapp 代理</strong>](#226-成为Dapp代理)
         * [<strong>2.2.7 存储信息</strong>](#227-存储信息)
         * [<strong>2.2.8 锁仓</strong>](#228-锁仓)
         * [<strong>2.2.9 跨链兑换</strong>](#229-跨链兑换)
-        * [<strong>2.2.10 根据 id 获取交易信息</strong>](#2210-根据 id 获取交易信息)
-      * [<strong>2.3 区块 blocks</strong>](#23-区块 blocks)
+        * [<strong>2.2.10 根据 id 获取交易信息</strong>](#2210-根据id获取交易信息)
+      * [<strong>2.3 区块 blocks</strong>](#23-区块blocks)
         * [<strong>2.3.1 根据高度获取区块详细信息</strong>](#231-根据高度获取区块详细信息)
     * [<strong>3 示例</strong>](#3-示例)
 
 
-# Graphene JS SDK 文档
+# Graphene-JS-SDK文档
 
-## **1 JS SDK 使用说明**
+## **1 JS-SDK 使用说明**
 官方提供 js-sdk，可运行与浏览器，Electron 客户端。支持 Graphene 系统内置多种交易类型。大多数调用需要调用者个人密钥，sdk 只在本地使用密钥，发送给服务端的数据不包含用户敏感信息。
 
 ### **1.1 请求过程说明**
@@ -39,7 +39,7 @@
 
 ## **2 接口**
 
-### **2.1 账户 accounts**
+### **2.1 账户accounts**
 
 #### **2.1.1 根据地址获取账户信息**
 接口地址：/api/account/address/:address
@@ -51,7 +51,7 @@
 curl -k -X GET 'http://123.56.187.196:10086/api/account/address/24dYNPt2Ed8ukwuaQi66R4npkeSWdygcUFo8hEHKseZ7DZtzV8'
 ```
 
-### **2.2 交易 transactions**
+### **2.2 交易transactions**
 
 #### **2.2.1 转账**
 
@@ -136,7 +136,7 @@ const vote = exports.vote(secret, [
 ])
 ```
 
-#### **2.2.5 注册 Dapp**
+#### **2.2.5 注册Dapp**
 
 接口地址：/api/transaction/transaction
 请求方式：POST
@@ -161,7 +161,7 @@ sdk 请求示例：
   }, secondSecret)
 ```
 
-#### **2.2.6 成为 Dapp 代理**
+#### **2.2.6 成为Dapp代理**
 
 接口地址：/api/transaction/transaction
 请求方式：POST
@@ -225,7 +225,7 @@ sdk 请求示例：
 ####  **2.2.9 跨链兑换**
 
 
-#### **2.2.10 根据 id 获取交易信息**
+#### **2.2.10 根据id获取交易信息**
 
 接口地址：/api/transaction/:id
 请求方式：GET
@@ -236,7 +236,7 @@ sdk 请求示例：
 curl -k -X GET 'http://123.56.187.196:10086/api/transaction/1722550667642e772fb834c6e8d3b9eb3aa04c7f27fd05df74a62758290f8e4a'
 ```
 
-### **2.3 区块 blocks**
+### **2.3 区块blocks**
 
 #### **2.3.1 根据高度获取区块详细信息**
 
