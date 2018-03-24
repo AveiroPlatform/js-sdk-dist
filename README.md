@@ -5,7 +5,7 @@
     * [<strong>1 JS-SDK 使用说明</strong>](#1-JS-SDK使用说明)
       * [<strong>1.1 请求过程说明</strong>](#11-请求过程说明)
     * [<strong>2 接口</strong>](#2-接口)
-      * [<strong>2.1 账户 accounts</strong>](#21-账户accounts)
+      * [<strong>2.1 账户accounts</strong>](#21-账户accounts)
         * [<strong>2.1.1 根据地址获取账户信息</strong>](#211-根据地址获取账户信息)
       * [<strong>2.2 交易 transactions</strong>](#22-交易transactions)
         * [<strong>2.2.1 转账</strong>](#221-转账)
@@ -19,10 +19,14 @@
         * [<strong>2.2.9 跨链兑换</strong>](#229-跨链兑换)
         * [<strong>2.2.10 根据id获取交易信息</strong>](#2210-根据id获取交易信息)
         * [<strong>2.2.11 开关代理</strong>](#2211-开关代理)
-      * [<strong>2.3 区块 blocks</strong>](#23-区块blocks)
+      * [<strong>2.3 区块blocks</strong>](#23-区块blocks)
         * [<strong>2.3.1 根据高度获取区块详细信息</strong>](#231-根据高度获取区块详细信息)
+        * [<strong>2.3.2 获取最高区块</strong>](#232-获取最高区块)
+      * [<strong>2.4 代理delegate</strong>](#24-代理delegate)
+        * [<strong>2.4.1 获取代理列表</strong>](#241-获取代理列表)
+      * [<strong>2.5 投票vote</strong>](#25-投票vote)
+        * [<strong>2.5.1 查询历史投票</strong>](#251-查询历史投票)
     * [<strong>3 示例</strong>](#3-示例)
-
 
 # Graphene-JS-SDK文档
 
@@ -278,6 +282,60 @@ SDK 请求示例：
 ```bash
 curl -k -X GET 'http://123.56.187.196:10086/api/block/height/230?org=1'
 ```
+
+#### **2.3.2 获取最高区块**
+
+接口地址：/api/block/top<br/>
+请求方式：GET<br/>
+参数：
+
+|名称	|类型   |必填 |说明            |
+|------ |-----  |---  |----              |
+
+备注：返回已入库之最高区块
+
+请求示例：
+```bash
+curl -k -X GET 'http://123.56.187.196:10086/api/block/top'
+```
+
+### **2.4 代理delegate**
+
+#### **2.4.1 获取代理列表**
+
+接口地址：/api/delegate/list/:page<br/>
+请求方式：GET<br/>
+参数：
+
+|名称	|类型   |必填 |说明            |
+|------ |-----  |---  |----         |
+|page | integer | Y | 第几页 |
+
+备注：page 从0开始
+
+请求示例：
+```bash
+curl -k -X GET 'http://123.56.187.196:10086/api/delegate/list/1'
+```
+
+### **2.5 投票vote**
+
+#### **2.5.1 查询历史投票**
+
+接口地址：/api/vote/voted/:address<br/>
+请求方式：GET<br/>
+参数：
+
+|名称	|类型   |必填 |说明            |
+|------ |-----  |---  |----         |
+|address | string | Y | 地址 |
+
+请求示例：
+```bash
+curl -k -X GET 'http://123.56.187.196:10086/api/vote/voted/24dYNPt2Ed8ukwuaQi66R4npkeSWdygcUFo8hEHKseZ7DZtzV8'
+```
+
+
 
 ### 3 示例
 
