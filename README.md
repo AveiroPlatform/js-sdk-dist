@@ -1,7 +1,7 @@
 目录
 =================
 
-  * [Graphene test net JS-SDK 文档](#Graphene-JS-SDK文档)
+  * [Graphene Test Net JS-SDK 文档](#Graphene-JS-SDK文档)
     * [<strong>1 JS-SDK 使用说明</strong>](#1-JS-SDK使用说明)
       * [<strong>1.1 请求过程说明</strong>](#11-请求过程说明)
     * [<strong>2 接口</strong>](#2-接口)
