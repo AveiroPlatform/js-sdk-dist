@@ -18,6 +18,7 @@
         * [<strong>2.2.8 锁仓</strong>](#228-锁仓)
         * [<strong>2.2.9 跨链兑换</strong>](#229-跨链兑换)
         * [<strong>2.2.10 根据 id 获取交易信息</strong>](#2210-根据id获取交易信息)
+        * [<strong>2.2.11 开关代理</strong>](#2211-开关代理)
       * [<strong>2.3 区块 blocks</strong>](#23-区块blocks)
         * [<strong>2.3.1 根据高度获取区块详细信息</strong>](#231-根据高度获取区块详细信息)
     * [<strong>3 示例</strong>](#3-示例)
@@ -26,12 +27,12 @@
 # Graphene-JS-SDK文档
 
 ## **1 JS-SDK 使用说明**
-官方提供 js-sdk，可运行与浏览器，Electron 客户端。支持 Graphene 系统内置交易类型。大多数调用需要调用者个人密钥，sdk 只在本地使用密钥，发送给服务端的数据不包含用户敏感信息。
+官方提供 js-sdk，可运行于浏览器，Electron 客户端。支持 Graphene 系统内置交易类型。本 sdk 多数函数调用需要个人密钥作为参数，但 sdk 只在本地使用密钥，发送给服务端的数据只包含公钥或者签名等信息，不包含用户敏感信息。
 
 ### **1.1 请求过程说明**
 1.1 发起一笔交易，调用 sdk 导出的相应类型函数。
 1.2 sdk 使用用户传入的参数，根据 Graphene 的接口规则，产生一个交易，并进行签名，最终得到完整的交易数据。
-1.3 发送请求，把构造完成的数据通过POST/GET等方式传发送给 Graphene 节点。
+1.3 发送请求，把构造完成的数据通过 POST/GET 等方式传发送给 Graphene 节点。
 1.4 服务端节点接收到请求后，立即进行校验，验证通过后便会处理该次发送过来的请求。
 1.5 以 JSON 格式返回响应结果数据。每个响应都包含 code 字段，0 表示成功，其他值表示失败，并包含错误原因。
 
@@ -182,7 +183,6 @@ sdk 请求示例：
   const joinDapp = exports.joinDapp(secret, id, secondSecret)
 ```
 
-
 #### **2.2.7 存储信息**
 
 接口地址：/api/transaction/transaction
@@ -224,6 +224,9 @@ sdk 请求示例：
 
 ####  **2.2.9 跨链兑换**
 
+```
+待开放
+```
 
 #### **2.2.10 根据id获取交易信息**
 
@@ -234,6 +237,27 @@ sdk 请求示例：
 请求示例：
 ```bash
 curl -k -X GET 'http://123.56.187.196:10086/api/transaction/1722550667642e772fb834c6e8d3b9eb3aa04c7f27fd05df74a62758290f8e4a'
+```
+
+#### **2.2.11 开关代理**
+
+接口地址：/api/transaction/transaction
+请求方式：POST
+支持格式：'application/json'
+sdk 导出函数：turnDelegate
+参数说明：
+
+|名称	|类型   |必填 |说明            |
+|------ |-----  |---  |----              |
+|secret |string | Y  | 发送者密码      |
+| open | boolean | Y | 打开 true，关闭 false |
+| secondSecret | string | N | 二级密码
+
+备注：只有注册为代理之后的账户此接口才有效
+
+sdk 请求示例：
+```js
+  const turnDelegate = exports.turnDelegate(secret, false, secondSecret)
 ```
 
 ### **2.3 区块blocks**
