@@ -335,8 +335,6 @@ curl -k -X GET 'http://123.56.187.196:10086/api/delegate/list/1'
 curl -k -X GET 'http://123.56.187.196:10086/api/vote/voted/24dYNPt2Ed8ukwuaQi66R4npkeSWdygcUFo8hEHKseZ7DZtzV8'
 ```
 
-
-
 ### 3 示例
 
 ```html
