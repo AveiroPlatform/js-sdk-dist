@@ -7,6 +7,7 @@
     * [<strong>2 接口</strong>](#2-接口)
       * [<strong>2.1 账户accounts</strong>](#21-账户accounts)
         * [<strong>2.1.1 根据地址获取账户信息</strong>](#211-根据地址获取账户信息)
+        * [<strong>2.1.2 随机生成一个主账户密码</strong>](#212-随机生成一个主账户密码)
       * [<strong>2.2 交易 transactions</strong>](#22-交易transactions)
         * [<strong>2.2.1 转账</strong>](#221-转账)
         * [<strong>2.2.2 设置二级密码</strong>](#222-设置二级密码)
@@ -54,6 +55,13 @@
 请求示例：
 ```bash
 curl -k -X GET 'http://123.56.187.196:10086/api/account/address/24dYNPt2Ed8ukwuaQi66R4npkeSWdygcUFo8hEHKseZ7DZtzV8'
+```
+
+### **2.1.2 随机生成一个主账户密码**
+
+```
+const mainSecret = exports.newSecret()
+console.log(mainSecret)
 ```
 
 ### **2.2 交易transactions**
