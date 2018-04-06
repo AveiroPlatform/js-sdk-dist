@@ -23,6 +23,7 @@
         * [<strong>2.2.9 跨链兑换</strong>](#229-跨链兑换)
         * [<strong>2.2.10 根据id获取交易信息</strong>](#2210-根据id获取交易信息)
         * [<strong>2.2.11 开关代理</strong>](#2211-开关代理)
+        * [<strong>2.2.12 获取全部交易</strong>](#2212-获取全部交易)
       * [<strong>2.3 区块blocks</strong>](#23-区块blocks)
         * [<strong>2.3.1 根据高度获取区块详细信息</strong>](#231-根据高度获取区块详细信息)
         * [<strong>2.3.2 获取最高区块</strong>](#232-获取最高区块)
@@ -307,6 +308,16 @@ SDK 请求示例：
 ```js
   const turnDelegate = erosLib.turnDelegate(secret, false, secondSecret)
 ```
+
+#### **2.2.12 获取全部交易**
+
+接口地址：/api/transaction/trss/:page<br/>
+请求方式：GET<br/>
+请求示例：
+```bash
+curl -k -X GET 'http://123.56.187.196:10086/api/transaction/trss/0'
+```
+
 
 ### **2.3 区块blocks**
 
