@@ -401,7 +401,7 @@ curl -k -X GET 'http://123.56.187.196:10086/api/delegate/list/1'
 
 请求示例：
 ```bash
-curl -k -X GET 'http://123.56.187.196:10086/api/vote/voted/24dYNPt2Ed8ukwuaQi66R4npkeSWdygcUFo8hEHKseZ7DZtzV8?page=0'
+curl -k -X GET 'http://123.56.187.196:10086/api/vote/voted/2S1pW43jTeZAvhXZRWcVjbpZhqS1ZMEczaRq7u4mGJfPwEoxW3?page=0'
 ```
 
 ### **2.6 其他导出函数**
