@@ -38,6 +38,8 @@
         * [<strong>2.6.3 将交易或者区块的timestamp转换为世界时</strong>](#263-将交易或者区块的timestamp转换为世界时)
         * [<strong>2.6.4 交易类型的文字描述</strong>](#264-交易类型的文字描述)
         * [<strong>2.6.5 判断地址是否合法</strong>](#265-判断地址是否合法)
+        * [<strong>2.6.6 判断字符串是否为交易Id</strong>](#266-判断字符串是否为交易Id)
+        * [<strong>2.6.7 判断是否为有效高度</strong>](#267-判断是否为有效高度)
     * [<strong>3 示例</strong>](#3-示例)
 
 # Eros-JS-SDK文档
@@ -395,11 +397,11 @@ curl -k -X GET 'http://123.56.187.196:10086/api/delegate/list/1'
 
 |名称	|类型   |必填 |说明            |
 |------ |-----  |---  |----         |
-|address | string | Y | 地址 |
+| page | string | Y | 页信息，从零开始    |
 
 请求示例：
 ```bash
-curl -k -X GET 'http://123.56.187.196:10086/api/vote/voted/24dYNPt2Ed8ukwuaQi66R4npkeSWdygcUFo8hEHKseZ7DZtzV8'
+curl -k -X GET 'http://123.56.187.196:10086/api/vote/voted/24dYNPt2Ed8ukwuaQi66R4npkeSWdygcUFo8hEHKseZ7DZtzV8?page=0'
 ```
 
 ### **2.6 其他导出函数**
@@ -434,6 +436,24 @@ console.log(erosLib.typeLiteral(trs.type))
 示例:
 ```
 if (erosLib.isAddress(address)) {
+  // ...
+}
+```
+
+#### **2.6.6 判断字符串是否为交易Id**
+
+示例:
+```
+if (erosLib.isTrsId('02be8404f181404847b63f7f19fcb52734f95f7ad22095848d76adb2faf2f67c')) {
+  // ...
+}
+```
+
+#### **2.6.7 判断是否为有效高度**
+
+示例:
+```
+if (erosLib.isValidHeight('20')) {
   // ...
 }
 ```
