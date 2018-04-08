@@ -72,6 +72,8 @@ curl -k -X GET 'http://123.56.187.196:10086/api/account/address/24dYNPt2Ed8ukwua
 
 #### **2.1.2 随机生成一个主账户密码**
 
+备注：只在web端使用，其他环境直接用 bitcore-mnemonic 模块
+
 ```
 const mainSecret = erosLib.newSecret()
 console.log(mainSecret)
