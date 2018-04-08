@@ -7,7 +7,7 @@
     * [<strong>2 接口</strong>](#2-接口)
       * [<strong>2.1 账户accounts</strong>](#21-账户accounts)
         * [<strong>2.1.1 根据地址获取账户信息</strong>](#211-根据地址获取账户信息)
-        * [<strong>2.1.2 随机生成一个主账户密码</strong>](#212-随机生成一个主账户密码)
+        * [<strong>2.1.2 由主账户密码得到密钥对</strong>](#212-由主账户密码得到密钥对)
         * [<strong>2.1.3 由地址计算公钥</strong>](#213-由地址计算公钥)
         * [<strong>2.1.4 由公钥计算地址</strong>](#214-由公钥计算地址)
         * [<strong>2.1.5 获取相关地址的所有交易</strong>](#215-获取相关地址的所有交易)
@@ -70,13 +70,11 @@
 curl -k -X GET 'http://123.56.187.196:10086/api/account/address/24dYNPt2Ed8ukwuaQi66R4npkeSWdygcUFo8hEHKseZ7DZtzV8'
 ```
 
-#### **2.1.2 随机生成一个主账户密码**
-
-备注：只在web端使用，其他环境直接用 bitcore-mnemonic 模块
+#### **2.1.2 由主账户密码得到密钥对**
 
 ```
-const mainSecret = erosLib.newSecret()
-console.log(mainSecret)
+const keyPair = erosLib.fromSecret('your secret')
+console.log(keyPair)
 ```
 
 #### **2.1.3 由地址计算公钥**
