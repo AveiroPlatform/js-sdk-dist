@@ -38,7 +38,7 @@
         * [<strong>2.6.3 将交易或者区块的timestamp转换为世界时</strong>](#263-将交易或者区块的timestamp转换为世界时)
         * [<strong>2.6.4 交易类型的文字描述</strong>](#264-交易类型的文字描述)
         * [<strong>2.6.5 判断地址是否合法</strong>](#265-判断地址是否合法)
-        * [<strong>2.6.6 判断字符串是否为交易Id</strong>](#266-判断字符串是否为交易Id)
+        * [<strong>2.6.6 判断字符串是否为交易id</strong>](#266-判断字符串是否为交易id)
         * [<strong>2.6.7 判断是否为有效高度</strong>](#267-判断是否为有效高度)
     * [<strong>3 示例</strong>](#3-示例)
 
@@ -378,9 +378,10 @@ curl -k -X GET 'http://123.56.187.196:10086/api/block/blocks/0'
 
 |名称	|类型   |必填 |说明            |
 |------ |-----  |---  |----         |
-|page | integer | Y | 第几页 |
+|page | integer | Y | 第几页，从零开始 |
+| address | string | N | 自己的地址 |
 
-备注：page 从0开始
+备注：address 用?address=xxx 来传，可以没有，如果有则额外返回是否给相应的代理投了票
 
 请求示例：
 ```bash
@@ -440,7 +441,7 @@ if (erosLib.isAddress(address)) {
 }
 ```
 
-#### **2.6.6 判断字符串是否为交易Id**
+#### **2.6.6 判断字符串是否为交易id**
 
 示例:
 ```
