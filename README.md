@@ -573,7 +573,7 @@ if (erosLib.isValidHeight('20')) {
 
 ### **2.7 智能合约**
 
-[https://github.com/ErosPlatform/docs/blob/master/eros_whitepaper_zh.md](https://github.com/ErosPlatform/docs/blob/master/eros_whitepaper_zh.md "https://github.com/ErosPlatform/docs/blob/master/eros_whitepaper_zh.md")
+[技术白皮书-合约](https://github.com/ErosPlatform/docs/blob/master/eros_whitepaper_zh.md "https://github.com/ErosPlatform/docs/blob/master/eros_whitepaper_zh.md")
 
 ### 3 示例
 
