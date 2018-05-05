@@ -304,7 +304,7 @@ curl -k -X GET 'http://123.56.187.196:10086/api/transaction/1722550667642e772fb8
 接口地址：/api/transaction/transaction<br/>
 请求方式：POST<br/>
 支持格式：'application/json'<br/>
-SDK 导出函数：turnDelegate<br/>
+SDK 导出函数: turnDelegate<br/>
 参数说明：
 
 |名称	|类型   |必填 |说明            |
@@ -334,7 +334,7 @@ curl -k -X GET 'http://123.56.187.196:10086/api/transaction/trss/0'
 接口地址：/api/transaction/transaction<br/>
 请求方式：POST<br/>
 支持格式：'application/json'<br/>
-SDK contract<br/>
+SDK 导出函数: contract<br/>
 参数说明：
 
 | 名称	| 类型 | 必填 | 说明 |
@@ -374,7 +374,7 @@ SDK 请求示例：
 接口地址：/api/transaction/transaction<br/>
 请求方式：POST<br/>
 支持格式：'application/json'<br/>
-SDK invoke<br/>
+SDK 导出函数: invoke<br/>
 参数说明：
 
 | 名称	| 类型 | 必填 | 说明 |
@@ -395,7 +395,7 @@ SDK 请求示例：
 接口地址：/api/transaction/transaction<br/>
 请求方式：POST<br/>
 支持格式：'application/json'<br/>
-SDK regAsset<br/>
+SDK 导出函数: regAsset<br/>
 参数说明：
 
 | 名称	| 类型 | 必填 | 说明 |
@@ -404,10 +404,11 @@ SDK regAsset<br/>
 | option | object | Y | option 对象 |
 | option.amount | long | Y | 资产总额 |
 | option.message | string | N | 备注，最多255个字符
+| secondSecret | string | N | 二级密码
 
 SDK 请求示例：
 ```js
-  const regAsset = erosLib.regAsset(secret, { amount })
+  const regAsset = erosLib.regAsset(secret, { amount }, secondSecret)
 ```
 
 #### **2.2.16 转移资产**
@@ -415,7 +416,7 @@ SDK 请求示例：
 接口地址：/api/transaction/transaction<br/>
 请求方式：POST<br/>
 支持格式：'application/json'<br/>
-SDK assetTransfer<br/>
+SDK 导出函数: assetTransfer<br/>
 参数说明：
 
 | 名称	| 类型 | 必填 | 说明 |
