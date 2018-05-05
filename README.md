@@ -24,6 +24,10 @@
         * [<strong>2.2.10 根据id获取交易信息</strong>](#2210-根据id获取交易信息)
         * [<strong>2.2.11 开关代理</strong>](#2211-开关代理)
         * [<strong>2.2.12 获取全部交易</strong>](#2212-获取全部交易)
+        * [<strong>2.2.13 提交合约</strong>](#2213-提交合约)
+        * [<strong>2.2.14 调用合约</strong>](#2214-调用合约)
+        * [<strong>2.2.15 注册资产</strong>](#2215-注册资产)
+        * [<strong>2.2.16 转移资产</strong>](#2216-转移资产)
       * [<strong>2.3 区块blocks</strong>](#23-区块blocks)
         * [<strong>2.3.1 根据高度获取区块详细信息</strong>](#231-根据高度获取区块详细信息)
         * [<strong>2.3.2 获取最高区块</strong>](#232-获取最高区块)
@@ -40,6 +44,7 @@
         * [<strong>2.6.5 判断地址是否合法</strong>](#265-判断地址是否合法)
         * [<strong>2.6.6 判断字符串是否为交易id</strong>](#266-判断字符串是否为交易id)
         * [<strong>2.6.7 判断是否为有效高度</strong>](#267-判断是否为有效高度)
+      * [<strong>2.7 智能合约</strong>](#27-智能合约)
     * [<strong>3 示例</strong>](#3-示例)
 
 # Eros-JS-SDK文档
@@ -53,6 +58,10 @@
 1.3 发送请求，把构造完成的数据通过 POST/GET 等方式传发送给 Eros 节点。<br/>
 1.4 服务端节点接收到请求后，立即进行校验，验证通过后便会处理该次发送过来的请求。<br/>
 1.5 以 JSON 格式返回响应结果数据。每个响应都包含 code 字段，0 表示成功，其他值表示失败，并包含错误原因。
+
+### **交易费用**
+
+TODO
 
 ---
 
@@ -320,6 +329,109 @@ SDK 请求示例：
 curl -k -X GET 'http://123.56.187.196:10086/api/transaction/trss/0'
 ```
 
+#### **2.2.13 提交合约**
+
+接口地址：/api/transaction/transaction<br/>
+请求方式：POST<br/>
+支持格式：'application/json'<br/>
+SDK contract<br/>
+参数说明：
+
+| 名称	| 类型 | 必填 | 说明 |
+|------|------|------|------|
+| secret | string | Y  | 发送者密码 |
+| option | object | Y | option 对象 |
+| option.code | string | Y | 合约代码 |
+| option.message | string | N | 备注，最多255个字符 |
+| secondSecret | string | N | 二级密码
+
+SDK 请求示例：
+```js
+  const code = `function main(args) {
+  var strget = storageGet()
+  var getObj = []
+  if (strget) {
+    getObj = JSON.parse(strget)
+  }
+  if (getObj.indexOf(requesterKey) >= 0) {
+    return JSON.stringify({
+      amount: 0
+    })
+  } else {
+    getObj.push(requesterKey)
+    storageSet(JSON.stringify(getObj))
+    return JSON.stringify({
+      amount: 5
+    })
+  }
+}`
+  const contract = erosLib.contract(secret, { code }, secondSecret)
+```
+
+
+#### **2.2.14 调用合约**
+
+接口地址：/api/transaction/transaction<br/>
+请求方式：POST<br/>
+支持格式：'application/json'<br/>
+SDK invoke<br/>
+参数说明：
+
+| 名称	| 类型 | 必填 | 说明 |
+|------|------|------|------|
+| secret | string | Y  | 发送者密码 |
+| option | object | Y | option 对象 |
+| option.contractId | string | Y | 合约id |
+| option.args | array | N | 字符串数组，不大于8项 |
+| option.message | string | N | 备注，最多255个字符
+
+SDK 请求示例：
+```js
+  const invoke = erosLib.invoke(secret, { contractId })
+```
+
+#### **2.2.15 注册资产**
+
+接口地址：/api/transaction/transaction<br/>
+请求方式：POST<br/>
+支持格式：'application/json'<br/>
+SDK regAsset<br/>
+参数说明：
+
+| 名称	| 类型 | 必填 | 说明 |
+|------|------|------|------|
+| secret | string | Y  | 发送者密码 |
+| option | object | Y | option 对象 |
+| option.amount | long | Y | 资产总额 |
+| option.message | string | N | 备注，最多255个字符
+
+SDK 请求示例：
+```js
+  const regAsset = erosLib.regAsset(secret, { amount })
+```
+
+#### **2.2.16 转移资产**
+
+接口地址：/api/transaction/transaction<br/>
+请求方式：POST<br/>
+支持格式：'application/json'<br/>
+SDK assetTransfer<br/>
+参数说明：
+
+| 名称	| 类型 | 必填 | 说明 |
+|------|------|------|------|
+| secret | string | Y  | 发送者密码 |
+| receiver | string | Y | 接收者地址 |
+| option | object | Y | option 对象 |
+| option.assetId | string | Y | 资产id |
+| option.amount | long | Y | 数量 |
+| option.message | string | N | 备注，最多255个字符 |
+| secondSecret | string | N | 二级密码
+
+SDK 请求示例：
+```js
+  const assetTransfer = erosLib.assetTransfer(secret, { assetId, amount }, secondSecret)
+```
 
 ### **2.3 区块blocks**
 
@@ -458,6 +570,10 @@ if (erosLib.isValidHeight('20')) {
   // ...
 }
 ```
+
+### **2.7 智能合约**
+
+[https://github.com/ErosPlatform/docs/blob/master/eros_whitepaper_zh.md](https://github.com/ErosPlatform/docs/blob/master/eros_whitepaper_zh.md "https://github.com/ErosPlatform/docs/blob/master/eros_whitepaper_zh.md")
 
 ### 3 示例
 
