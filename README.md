@@ -25,7 +25,7 @@
         * [<strong>2.2.13 提交合约</strong>](#2213-提交合约)
         * [<strong>2.2.14 调用合约</strong>](#2214-调用合约)
         * [<strong>2.2.15 注册资产</strong>](#2215-注册资产)
-        * [<strong>2.2.16 转移资产</strong>](#2216-转移资产)
+        * [<strong>2.2.16 资产转账</strong>](#2216-资产转账)
       * [<strong>2.3 区块blocks</strong>](#23-区块blocks)
         * [<strong>2.3.1 根据高度获取区块详细信息</strong>](#231-根据高度获取区块详细信息)
         * [<strong>2.3.2 获取最高区块</strong>](#232-获取最高区块)
@@ -363,7 +363,7 @@ SDK 请求示例：
   const regAsset = erosLib.regAsset(secret, { amount }, secondSecret)
 ```
 
-#### **2.2.16 转移资产**
+#### **2.2.16 资产转账**
 
 接口地址：/api/transaction/transaction<br/>
 请求方式：POST<br/>
