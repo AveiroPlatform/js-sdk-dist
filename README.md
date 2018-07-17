@@ -16,8 +16,6 @@
         * [<strong>2.2.2 设置二级密码</strong>](#222-设置二级密码)
         * [<strong>2.2.3 注册为代理</strong>](#223-注册为代理)
         * [<strong>2.2.4 投票</strong>](#224-投票)
-        * [<strong>2.2.5 注册Dapp</strong>](#225-注册Dapp)
-        * [<strong>2.2.6 成为Dapp代理</strong>](#226-成为Dapp代理)
         * [<strong>2.2.7 存储信息</strong>](#227-存储信息)
         * [<strong>2.2.8 锁仓</strong>](#228-锁仓)
         * [<strong>2.2.9 跨链兑换</strong>](#229-跨链兑换)
@@ -195,52 +193,6 @@ SDK 请求示例：
 const vote = erosLib.vote(secret, [
   '+bc7e64263844ab3d4f91edbe76d6c2a066efa29159b941cbcd411e0cbb825cf9'
 ])
-```
-
-#### **2.2.5 注册Dapp**
-
-接口地址：/api/transaction/transaction<br/>
-请求方式：POST<br/>
-支持格式：'application/json'<br/>
-SDK 导出函数：dapp<br/>
-参数说明：
-
-|名称	|类型   |必填 |说明              |
-|------ |-----  |---  |----              |
-|secret |string |Y    | 发送者密码      |
-| opt | object | Y | option 对象 |
-| opt.id | long | Y | 侧链 id |
-| opt.name | string | N |名称|
-| opt.description | string | N |描述 |
-|opt.link | string| N | 主页链接 |
-| secondSecret | string |N | 二级密码
-
-SDK 请求示例：
-```js
-  const dapp = erosLib.dapp(secret, {
-    id
-  }, secondSecret)
-```
-
-#### **2.2.6 成为Dapp代理**
-
-接口地址：/api/transaction/transaction<br/>
-请求方式：POST<br/>
-支持格式：'application/json'<br/>
-SDK 导出函数：joinDapp<br/>
-参数说明：
-
-|名称	|类型   |必填 |说明              |
-|------ |-----  |---  |----              |
-|secret |string |Y    | 发送者密码      |
-| id | long | Y | 侧链 id |
-| secondSecret |string |N | 二级密码
-
-备注：侧链注册者自动成为 Dapp 代理。成为 Dapp 代理可处理跨链兑币交易。
-
-SDK 请求示例：
-```js
-  const joinDapp = erosLib.joinDapp(secret, id, secondSecret)
 ```
 
 #### **2.2.7 存储信息**
