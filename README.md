@@ -43,6 +43,7 @@
         * [<strong>2.6.6 判断字符串是否为交易id</strong>](#266-判断字符串是否为交易id)
         * [<strong>2.6.7 判断是否为有效高度</strong>](#267-判断是否为有效高度)
       * [<strong>2.7 智能合约</strong>](#27-智能合约)
+      * [<strong>2.8 其他常用</strong>](#28-其他常用)
     * [<strong>3 示例</strong>](#3-示例)
 
 # Eros-JS-SDK文档
@@ -527,6 +528,14 @@ if (erosLib.isValidHeight('20')) {
 ### **2.7 智能合约**
 
 [技术白皮书-合约](https://github.com/ErosPlatform/docs/blob/master/eros_whitepaper_zh.md "https://github.com/ErosPlatform/docs/blob/master/eros_whitepaper_zh.md")
+
+
+### **2.8 其他常用**
+
+#### **2.8.1 获取节点列表**
+
+接口地址：/peer/list<br/>
+请求方式：GET<br/>
 
 ### 3 示例
 
