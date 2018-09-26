@@ -545,7 +545,7 @@ if (erosLib.isValidHeight('20')) {
 <meta charset="utf-8"/>
 <title>TEST</title>
 <script type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="http://7xqoxy.com1.z0.glb.clouddn.com/cryp.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://admin.waketu.com/cryp.js"></script>
 <script type="text/javascript" charset="utf-8" src="index.bundle.js"></script>
 </head>
 <body>
